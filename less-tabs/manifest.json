@@ -5,15 +5,17 @@
 	"description": "More life, less headache",
 	"version": "0.0",
 
-	"browser_action": {
+	"browser_action": 
+	{
 		"default_icon": "icon.png",
 		"default_popup": "options.html",
 		"default_title": "DA WAE"
 	},
 
-	"permissions":["tabs"],
+	"permissions":["tabs", "storage"],
 
-	"background": {
+	"background": 
+	{
 		"scripts": ["background.js"]
 	}
 }
