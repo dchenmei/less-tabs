@@ -15,7 +15,6 @@ chrome.storage.sync.get('limitTabs',
 	}
 );
 
-
 // Updates changes for tabLimit value
 function changeTabLimit()
 {
@@ -31,3 +30,16 @@ chrome.storage.sync.get('tabLimit',
 		document.getElementById('tabLimit').value = chromeStorage.tabLimit === undefined ? 2 : chromeStorage.tabLimit;
 	}
 );
+
+// Updates changes for tabsOpen
+
+// set current window tabs count
+function setTabsCount()
+{
+	chrome.tabs.query({'currentWindow' : true}, function(foundTabs) {
+        	var tabsCount = foundTabs.length;
+			document.getElementById('tabsOpen').value = tabsCount;
+	});
+}
+
+setTabsCount();
