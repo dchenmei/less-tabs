@@ -1,23 +1,21 @@
-var limitTabs = true;
-// Called when user enables / disables "limit tabs" option
-
-// Listener on storage
-chrome.storage.onChanged.addListener(
-	function(changes, namespace)
+// Only if limit tabs is on and exceeded limit does the tab get closed
+chrome.tabs.onCreated.addListener(function(tab)
+{
+	chrome.tabs.query({}, function(foundTabs)
 	{
-		if (changes[limitTabs])
-		{
-			limitTabs = changes['limitTabs'].newValue;
-		}
-	}
-);
-
-// Sync
-chrome.storage.sync.get('limitTabs',
-	function(chromeStorage)
-	{
-		limitTabs = chromeStorage.limitTabs;
-	}
-);
-
-
+		chrome.storage.sync.get(['limitTabs', 'tabLimit', 'tabsOpen'], 
+			function(chromeStorage) 
+			{
+				var limitTabs = chromeStorage.limitTabs;
+				var tabLimit = chromeStorage.tabLimit;
+				var tabsOpen = foundTabs.length;
+		
+				//alert(limitTabs + " " + tabLimit + " " + tabsOpen);
+				if (limitTabs && tabsOpen > tabLimit)
+				{
+					alert(tabLimit + " " + tabsOpen);
+				}
+		   }
+		);
+	});
+});
