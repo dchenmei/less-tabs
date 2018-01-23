@@ -34,7 +34,7 @@ chrome.storage.sync.get('tabLimit',
 // Updates changes for tabsOpen
 
 // set current window tabs count
-function setTabsCount()
+function setTabsCountCurrWindow()
 {
 	chrome.tabs.query({'currentWindow' : true}, function(foundTabs) {
         	var tabsCount = foundTabs.length;
@@ -42,4 +42,16 @@ function setTabsCount()
 	});
 }
 
+// set tab count for all windows
+function setTabsCount()
+{
+	chrome.tabs.query({}, function(foundTabs) 
+	{
+		var tabsCount = foundTabs.length;
+		document.getElementById('tabsOpen').value = tabsCount;
+	});
+};
+
 setTabsCount();
+
+
