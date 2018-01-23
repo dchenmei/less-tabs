@@ -2,7 +2,7 @@
 function changeLimitTabs()
 {
 	var limitTabs = document.getElementById('limitTabs');
-	chrome.storage.sync.set({'limitTabs': limitTabs.checked});
+	chrome.storage.sync.set({'limitTabs' : limitTabs.checked});
 }
 
 document.getElementById('limitTabs').addEventListener('change', changeLimitTabs);
@@ -15,3 +15,19 @@ chrome.storage.sync.get('limitTabs',
 	}
 );
 
+
+// Updates changes for tabLimit value
+function changeTabLimit()
+{
+	var tabLimit = document.getElementById('tabLimit');
+	chrome.storage.sync.set({'tabLimit' : tabLimit.value});
+}
+
+document.getElementById('tabLimit').addEventListener('input', changeTabLimit);
+
+chrome.storage.sync.get('tabLimit',
+	function(chromeStorage)
+	{
+		document.getElementById('tabLimit').value = chromeStorage.tabLimit === undefined ? 2 : chromeStorage.tabLimit;
+	}
+);
