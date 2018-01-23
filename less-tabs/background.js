@@ -13,7 +13,7 @@ chrome.tabs.onCreated.addListener(function(tab)
 				//alert(limitTabs + " " + tabLimit + " " + tabsOpen);
 				if (limitTabs && tabsOpen > tabLimit)
 				{
-					alert(tabLimit + " " + tabsOpen);
+					chrome.tabs.remove(tab.id);
 				}
 		   }
 		);
