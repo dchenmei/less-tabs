@@ -1,9 +1,4 @@
 {
-	"manifest_version": 2, 
-
-	"name": "Less Tabs", 
-	"description": "More life, less headache",
-	"version": "0.0",
 
 	"browser_action": 
 	{
@@ -12,10 +7,14 @@
 		"default_title": "DA WAE"
 	},
 
-	"permissions":["tabs", "storage"],
-
 	"background": 
 	{
 		"scripts": ["background.js"]
 	}
+
+	"manifest_version": 2, 
+	"name": "Less Tabs", 
+	"description": "More life, less headache",
+	"permissions":["tabs", "storage"],
+	"version": "0.0",
 }
