@@ -4,11 +4,18 @@ function changeLimitTabs()
 	var limitTabs = document.getElementById('limitTabs');
 
 	// Give warning and close tabs until number is reached
-	// TODO: this is probably not the most elegant way to do this
 	if (limitTabs.checked)
 	{
 		if (confirm("Tabs might be closed, please save important information"))
 		{
+			chrome.tabs.query({}, function(tabs)
+			{
+				var tabLimit = document.getElementById('tabLimit').value;
+				for (var i = tabs.length - 1; i >= tabLimit; i--)
+				{
+					chrome.tabs.remove(tabs[i].id);
+				}
+			});
 		}
 		else
 		{
