@@ -9,15 +9,21 @@ body
 	transition: opacity 0.2s;
 }
 
-input 
+input[type=number]
 {
 	width: 30px;
+	border: 0;
+}
 
+/* Always show spinner for number input */
+#tabLimit[type=number]::-webkit-inner-spin-button,
+#tabLimit[type=number]::-webkit-outer-spin-button 
+{
+	opacity: 1;
 }
 
 #title
 {
 	font-size: 130%;
-
 }
 
