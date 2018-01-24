@@ -7,6 +7,7 @@ body
 	font-family: 'Lato'; /* Chrome supports Google fonts */
 	font-size: 100%;
 	transition: opacity 0.2s;
+	padding: 10px;
 }
 
 input[type=number]
