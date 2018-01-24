@@ -25,6 +25,7 @@ input[type=number]
 
 #title
 {
+	font-weight: bold;
 	font-size: 130%;
 }
 
