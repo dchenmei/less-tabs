@@ -1,20 +1,19 @@
 {
-
 	"browser_action": 
 	{
 		"default_icon": "icon.png",
 		"default_popup": "options.html",
-		"default_title": "DA WAE"
+		"default_title": "Less Tabs"
 	},
 
 	"background": 
 	{
 		"scripts": ["background.js"]
-	}
+	},
 
 	"manifest_version": 2, 
 	"name": "Less Tabs", 
-	"description": "More life, less headache",
+	"description": "Less tabs, no clutter, happier life.",
 	"permissions":["tabs", "storage"],
-	"version": "0.0",
+	"version": "0.1"
 }
