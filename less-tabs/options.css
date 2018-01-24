@@ -4,6 +4,20 @@
 body 
 {
 	white-space: nowrap;
+	font-family: 'Lato'; /* Chrome supports Google fonts */
+	font-size: 100%;
+	transition: opacity 0.2s;
 }
 
+input 
+{
+	width: 30px;
+
+}
+
+#title
+{
+	font-size: 130%;
+
+}
 
