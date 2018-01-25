@@ -2,8 +2,22 @@
 
 When only the favicons are visible on the tab bar, it can be a nightmare. Browser extension Less Tabs aims to reduce clutter and push users towards more conscious browsing. 
 
-Less Tabs is not a memory management tool. Most computers can handle large amount of tabs before any hiccup. Rather, it is a stress management tool. No more "I will look at it later" mirage, unecessary pressure to look at all the saved tabs, or unforeseen panic attacks when they are gone.
-
-Less Tabs is also a handy productivity tool that allows the user to focus on the tabs (tasks) at hand. 
-
 Note: Currently only supported on Chrome 
+
+## Installation
+
+Requirements:
+* Google Chrome (with developer mode enabled)
+* Less Tabs repo unzipped
+
+On Chrome extensions page, click "load unpacked extension" and navigate into `less-tabs` folder and click open.
+
+Note: Please restart Chrome after installation
+
+## Usage Info
+
+By default, limit tabs is enabled and limit set to 2 tabs. Recommended tab limit is 3 which allows for some controlled multitasking.
+
+Note: When enabling limit tabs, extra tabs will be closed. Please save all your information before hand.
+
+
