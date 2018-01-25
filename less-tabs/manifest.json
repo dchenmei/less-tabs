@@ -15,5 +15,5 @@
 	"name": "Less Tabs", 
 	"description": "Less tabs, no clutter, happier life.",
 	"permissions":["tabs", "storage"],
-	"version": "0.1"
+	"version": "0.2"
 }
