@@ -1,6 +1,6 @@
 # Less Tabs
 
-When only the favicons are visible on the tab bar, it can be a nightmare. Browser extension Less Tabs aims to reduce clutter and push users towards more conscious browsing. 
+When only the favicons are visible on the tab bar, it can be a nightmare. Browser extension Less Tabs aims to reduce clutter and push users towards more conscious browsing by limiting number of open tabs.
 
 Note: Currently only supported on Chrome 
 
