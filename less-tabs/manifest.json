@@ -6,6 +6,8 @@
 		"default_title": "Less Tabs"
 	},
 
+	"icons": {"128": "icon.png" },
+
 	"background": 
 	{
 		"scripts": ["background.js"]
