@@ -13,9 +13,18 @@
 		"scripts": ["background.js"]
 	},
 
+	"applications": 
+	{
+		"gecko":
+		{
+			"id": "lesstabs@foobar.com"
+		}
+	},
+
 	"manifest_version": 2, 
 	"name": "Less Tabs", 
 	"description": "Less tabs, no clutter, happier life.",
 	"permissions":["tabs", "storage"],
 	"version": "0.2"
+
 }
