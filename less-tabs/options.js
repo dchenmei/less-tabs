@@ -1,9 +1,11 @@
 // Describes Less Tabs popup under the cover functionalities
-// Author: swolewizard
+// Author: dchenmei 
 
-// Limit Tabs Checkbox 
 
-// When called, warn user that tabs might be closed then update change in chrome storage
+
+/*
+ * Called after toggle on / off tab limiting on UI
+ */
 function changeLimitTabs()
 {
 	var limitTabs = document.getElementById('limitTabs');
@@ -30,7 +32,17 @@ function changeLimitTabs()
 		}
 	}
 	
+	// Update limitTabs field in cloud storage
 	chrome.storage.sync.set({'limitTabs' : limitTabs.checked});
+}
+
+/*
+ * Called after new tab limit is set on UI
+ */
+function changeTabLimit()
+{
+	var tabLimit = document.getElementById('tabLimit');
+	chrome.storage.sync.set({'tabLimit' : tabLimit.value});
 }
 
 // If user made changes to checkbox, call above function
@@ -45,13 +57,6 @@ chrome.storage.sync.get('limitTabs',
 );
 
 // Max Tabs Number Field
-
-// When called, update new number in chrome storage
-function changeTabLimit()
-{
-	var tabLimit = document.getElementById('tabLimit');
-	chrome.storage.sync.set({'tabLimit' : tabLimit.value});
-}
 
 // If user changes the number, call above function
 document.getElementById('tabLimit').addEventListener('input', changeTabLimit);
