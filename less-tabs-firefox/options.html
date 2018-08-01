@@ -1,0 +1,28 @@
+<!-- Describes Less Tabs popup  
+	 Author: dchenmei
+-->
+<!doctype html>
+<html>
+	<head>
+		<link href="options.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<label id="title"> Less Tabs </label>
+		<br><br>
+		<label class="checkbox">
+			Limit Tabs&nbsp;&nbsp;
+			<input id="limitTabs" type="checkbox">
+			<span class="checkmark"></span>
+		</label>
+		<br><br>
+		<label>Max Tabs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input id="tabLimit" type="number" min="1" max="99">
+		</label>
+		<br><br>
+		<label>Tabs Open&nbsp;&nbsp;&nbsp;
+			<input id="tabsOpen" type="number" readonly="readonly">
+		</label>
+
+		<script src="options.js"></script>
+	</body>
+</html>
