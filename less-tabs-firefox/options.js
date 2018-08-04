@@ -7,27 +7,29 @@
 function changeLimitTabs()
 {
 	var limitTabs = document.getElementById('limitTabs');
+	var tabLimit = document.getElementById('tabLimit').value;
 
 	// When user enables limit tabs
 	if (limitTabs.checked)
 	{
 		// Send warning message. If yes, iterate and remove extra tabs from the end
-		if (confirm("Tabs might be closed, please save important information"))
-		{
+
+		//if (confirm("Tabs might be closed, please save important information"))
+		//{
 			browser.tabs.query({}, function(tabs)
 			{
-				var tabLimit = document.getElementById('tabLimit').value;
 				for (var i = tabs.length - 1; i >= tabLimit; i--)
 				{
 					browser.tabs.remove(tabs[i].id);
 				}
 			});
-		}
-		// If no, uncheck limit tabs
+		//}
+		/*
 		else
 		{
-			document.getElementById('limitTabs').checked = false;
+			limitTabs.checked = false;
 		}
+		*/
 	}
 	
 	// Update limitTabs field in cloud storage
