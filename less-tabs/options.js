@@ -1,8 +1,7 @@
 // Describes Less Tabs popup under the cover functionalities
 // Author: dchenmei 
 
-
-
+// Methods
 /*
  * Called after toggle on / off tab limiting on UI
  */
@@ -45,32 +44,29 @@ function changeTabLimit()
 	chrome.storage.sync.set({'tabLimit' : tabLimit.value});
 }
 
-// If user made changes to checkbox, call above function
-document.getElementById('limitTabs').addEventListener('change', changeLimitTabs);
+/****************************************************
+ *
+ * Initialization
+ *
+ ***************************************************/
 
-// Updated checkbox status with previously stored option, else checked by default
-chrome.storage.sync.get('limitTabs',
-	function(chromeStorage)
-	{
-		document.getElementById('limitTabs').checked = chromeStorage.limitTabs === undefined ? true : chromeStorage.limitTabs;
-	}
-);
+// Load previous checkbox status, else not checked (prevent accidents)
+const default_checked = false;
+chrome.storage.sync.get('limitTabs', function(chromeStorage)
+{
+	document.getElementById('limitTabs').checked = 
+		chromeStorage.limitTabs === undefined ? default_checked : chromeStorage.limitTabs;
+});
 
-// Max Tabs Number Field
+// Load previous limit number, else default (default_limit)
+const default_limit = 5;
+chrome.storage.sync.get('tabLimit', function(chromeStorage)
+{
+	document.getElementById('tabLimit').value = 
+		chromeStorage.tabLimit === undefined ? default_limit : chromeStorage.tabLimit;
+});
 
-// If user changes the number, call above function
-document.getElementById('tabLimit').addEventListener('input', changeTabLimit);
-
-// Update number field with previously stored optoin, else 2 by default
-chrome.storage.sync.get('tabLimit',
-	function(chromeStorage)
-	{
-		document.getElementById('tabLimit').value = chromeStorage.tabLimit === undefined ? 2 : chromeStorage.tabLimit;
-	}
-);
-
-// Tabs Open Field
-
+// TODO: need some work below
 // Set tabs open to the number of tabs from all windows
 chrome.tabs.query({}, function(foundTabs) 
 {
@@ -79,6 +75,10 @@ chrome.tabs.query({}, function(foundTabs)
 	chrome.storage.sync.set({'tabsOpen' : tabsCount});
 	
 });
+
+// If user made changes to checkbox, call above function
+document.getElementById('limitTabs').addEventListener('change', changeLimitTabs);
+document.getElementById('tabLimit').addEventListener('input', changeTabLimit);
 
 // Sets tab count for current window, a possible future functionality
 /*
