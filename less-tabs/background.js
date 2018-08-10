@@ -1,7 +1,7 @@
-// Describes Less Tabs extension background process
+// background.js
 // author: dchenmei
 
-// When a new tab is open, process it 
+// When a new tab is open, handle it
 chrome.tabs.onCreated.addListener(function(tab)
 {
 	chrome.tabs.query({}, function(tabs)
@@ -12,19 +12,17 @@ chrome.tabs.onCreated.addListener(function(tab)
  		 * tabLimit: int, tab limit set on UI
  		 * tabsOpen: int, number of tabs currently open
  		 */
-		chrome.storage.sync.get(['limitTabs', 'tabLimit', 'tabsOpen'], 
-			function(chromeStorage) 
-			{
+		chrome.storage.sync.get(['limitTabs', 'tabLimit', 'tabsOpen'], function(chromeStorage) 
+		{
 				var limitTabs = chromeStorage.limitTabs;
 				var tabLimit = chromeStorage.tabLimit;
 				var tabsOpen = tabs.length;
 		
-				// If number tab limit is on and current tabs exceed limit, delete new tab
+				// If extension is on and number of tabs exceed limit, delete new tab
 				if (limitTabs && tabsOpen > tabLimit)
 				{
 					chrome.tabs.remove(tab.id);
 				}
-		   }
-		);
+		});
 	});
 });
