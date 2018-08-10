@@ -1,10 +1,12 @@
-/* Describes Less Tabs popup style
+/* options.css
+ * Describes Less Tabs popup style
  * Author: dchenmei
  */
+
 body 
 {
 	white-space: nowrap;
-	font-family: 'Lato'; /* Chrome supports Google fonts */
+	font-family: 'Lato'; /* A sexy Google font */
 	font-size: 100%;
 	transition: opacity 0.2s;
 	padding: 10px;
