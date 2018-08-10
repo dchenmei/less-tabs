@@ -13,7 +13,7 @@ Requirements:
 
 0. Clone this repo
 
-1. Enter `chrome://extensions` into address bar and hit `enter`
+1. Navigate to `chrome://extensions`
 
 2. Toggle on "Developer mode" on upper right hand corner
 
@@ -21,13 +21,26 @@ Requirements:
 
 4. Enter "less-tabs" subfolder then hit open 
 
-Note: Please restart Chrome after installation
+#### Firefox
+
+0. Clone this repo
+
+1. Navigate to `about::addons`
+
+2. Switch to extensions subpage
+
+3. Drag and drog any file from `repo-dir/less-tabs-firefox`
+
+4. (Alternative to step) 4 Click on settings and load from file
+
+Note: Please restart browser after installation
+
 
 ## Usage 
 
 By default, limit tabs is disabled and limit set to 5 tabs. 
 
-To enable limit tabs, click on extension icon and open popup. You will see th  following:
+To enable limit tabs, click on extension icon and open popup. You will see the following:
 
 <p align="center">
 	<img src="README.png" />
