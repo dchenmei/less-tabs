@@ -2,22 +2,35 @@
 
 When only the favicons are visible on the tab bar, it can be a nightmare. Browser extension Less Tabs aims to reduce clutter and push users towards more conscious browsing by limiting number of open tabs.
 
-Note: Currently only supported on Chrome 
+Browsers Supported: Chrome, Firefox
 
 ## Installation
 
 Requirements:
-* Google Chrome (with developer mode enabled)
-* Less Tabs repo unzipped
+* Google Chrome / Firefox
 
-On Chrome extensions page, click "load unpacked extension" and navigate into `less-tabs` folder and click open.
+#### Chrome
+
+0. Clone this repo
+
+1. Enter `chrome://extensions` into address bar and hit `enter`
+
+2. Toggle on "Developer mode" on upper right hand corner
+
+3. Click "Load unpacked" and navigate to repo directory 
+
+4. Enter "less-tabs" subfolder then hit open 
 
 Note: Please restart Chrome after installation
 
-## Usage Info
+## Usage 
 
-By default, limit tabs is enabled and limit set to 2 tabs. Recommended tab limit is 3 which allows for some controlled multitasking.
+By default, limit tabs is disabled and limit set to 5 tabs. 
 
-Note: When enabling limit tabs, extra tabs will be closed. Please save all your information before hand.
+To enable limit tabs, click on extension icon and open popup. You will see th  following:
 
+<p align="center">
+	<img src="README.png" />
+</p>
 
+To enable, simply check the box. Also adjust the max tabs to your liking. Please note extra tabs will be closed, please save anything important!!
