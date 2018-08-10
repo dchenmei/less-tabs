@@ -1,10 +1,13 @@
 // Describes Less Tabs popup under the cover functionalities
 // Author: dchenmei 
 
-// Methods
-/*
- * Called after toggle on / off tab limiting on UI
- */
+/****************************************************
+ *
+ * Methods
+ *
+ ***************************************************/
+
+// When called, toggles limit tabs function on / off
 function changeLimitTabs()
 {
 	var limitTabs = document.getElementById('limitTabs');
@@ -35,9 +38,7 @@ function changeLimitTabs()
 	chrome.storage.sync.set({'limitTabs' : limitTabs.checked});
 }
 
-/*
- * Called after new tab limit is set on UI
- */
+// When called, update max number of tabs to the user input on popup
 function changeTabLimit()
 {
 	var tabLimit = document.getElementById('tabLimit');
@@ -66,7 +67,6 @@ chrome.storage.sync.get('tabLimit', function(chromeStorage)
 		chromeStorage.tabLimit === undefined ? default_limit : chromeStorage.tabLimit;
 });
 
-// TODO: need some work below
 // Set tabs open to the number of tabs from all windows
 chrome.tabs.query({}, function(foundTabs) 
 {
@@ -76,7 +76,7 @@ chrome.tabs.query({}, function(foundTabs)
 	
 });
 
-// If user made changes to checkbox, call above function
+// If user make changes in popup, update
 document.getElementById('limitTabs').addEventListener('change', changeLimitTabs);
 document.getElementById('tabLimit').addEventListener('input', changeTabLimit);
 
