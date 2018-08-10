@@ -25,7 +25,7 @@ Requirements:
 
 0. Clone this repo
 
-1. Navigate to `about::addons`
+1. Navigate to `about:addons`
 
 2. Switch to extensions subpage
 

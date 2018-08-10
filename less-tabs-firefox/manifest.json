@@ -23,8 +23,8 @@
 
 	"manifest_version": 2, 
 	"name": "Less Tabs", 
-	"description": "Less tabs, no clutter, happier life.",
+	"description": "Less tabs, less clutter, happier life.",
 	"permissions":["tabs", "storage"],
-	"version": "0.2"
+	"version": "0.5"
 
 }

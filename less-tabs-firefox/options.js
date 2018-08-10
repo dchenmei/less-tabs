@@ -1,9 +1,13 @@
 // Describes Less Tabs popup under the cover functionalities
 // Author: dchenmei 
 
-/*
- * Called after toggle on / off tab limiting on UI
- */
+/****************************************************
+ *
+ * Methods
+ *
+ ***************************************************/
+
+// When called, toggles limit tabs function on / off
 function changeLimitTabs()
 {
 	var limitTabs = document.getElementById('limitTabs');
@@ -36,40 +40,34 @@ function changeLimitTabs()
 	browser.storage.sync.set({'limitTabs' : limitTabs.checked});
 }
 
-/*
- * Called after new tab limit is set on UI
- */
+// When called, update max number of tabs to the user input on popup
 function changeTabLimit()
 {
 	var tabLimit = document.getElementById('tabLimit');
 	browser.storage.sync.set({'tabLimit' : tabLimit.value});
 }
 
-// If user made changes to checkbox, call above function
-document.getElementById('limitTabs').addEventListener('change', changeLimitTabs);
+/****************************************************
+ *
+ * Initialization
+ *
+ ***************************************************/
 
-// Updated checkbox status with previously stored option, else checked by default
-browser.storage.sync.get('limitTabs',
-	function(browserStorage)
-	{
-		document.getElementById('limitTabs').checked = browserStorage.limitTabs === undefined ? true : browserStorage.limitTabs;
-	}
-);
+// Load previous checkbox status, else not checked (prevent accidents)
+const default_checked = false;
+browser.storage.sync.get('limitTabs', function(storage)
+{
+	document.getElementById('limitTabs').checked = 
+		storage.limitTabs === undefined ? default_checked : storage.limitTabs;
+});
 
-// Max Tabs Number Field
-
-// If user changes the number, call above function
-document.getElementById('tabLimit').addEventListener('input', changeTabLimit);
-
-// Update number field with previously stored optoin, else 2 by default
-browser.storage.sync.get('tabLimit',
-	function(browserStorage)
-	{
-		document.getElementById('tabLimit').value = browserStorage.tabLimit === undefined ? 2 : browserStorage.tabLimit;
-	}
-);
-
-// Tabs Open Field
+// Load previous limit number, else default (default_limit)
+const default_limit = 5;
+browser.storage.sync.get('tabLimit', function(storage)
+{
+	document.getElementById('tabLimit').value = 
+		storage.tabLimit === undefined ? default_limit : storage.tabLimit;
+});
 
 // Set tabs open to the number of tabs from all windows
 browser.tabs.query({}, function(foundTabs) 
@@ -79,6 +77,10 @@ browser.tabs.query({}, function(foundTabs)
 	browser.storage.sync.set({'tabsOpen' : tabsCount});
 	
 });
+
+// If user make changes in popup, update
+document.getElementById('limitTabs').addEventListener('change', changeLimitTabs);
+document.getElementById('tabLimit').addEventListener('input', changeTabLimit);
 
 // Sets tab count for current window, a possible future functionality
 /*
