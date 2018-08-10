@@ -21,17 +21,17 @@ Requirements:
 
 4. Enter "less-tabs" subfolder then hit open 
 
-#### Firefox
+#### Firefox 
 
 0. Clone this repo
 
-1. Navigate to `about:addons`
+1. Navigate to `about:debugging`
 
-2. Switch to extensions subpage
+2. Click "Load Temporary Addon"
 
-3. Drag and drog any file from `repo-dir/less-tabs-firefox`
+3. Navigate to repo directory
 
-4. (Alternative to step) 4 Click on settings and load from file
+4. Select any files and hit open
 
 Note: Please restart browser after installation
 
