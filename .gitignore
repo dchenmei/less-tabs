@@ -1,7 +1,9 @@
 ## todo file
-
 todo.txt
 
 ## crx files
 *.crx
 *.pem
+
+## vim swap files
+*.swp
